@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   font-weight: 300;
+  margin: 0;
 }
 
 html,
@@ -33,9 +34,14 @@ main {
 
 .answer {
   font-size: 2em;
+  margin: 0;
 }
 .answer.now {
   font-size: 2.5em;
+}
+
+.time-until {
+  margin: 0;
 }
 
 .now {
