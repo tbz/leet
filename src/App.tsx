@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import "./App.css";
 import { Language, languages, useCurrentLanguage, useText } from "./i18n";
+import "./App.css";
 
 const TICK = 500;
 const HOUR = 13;
@@ -48,8 +48,8 @@ function useClock(tick = TICK) {
   return now;
 }
 
-function Main() {
-  const timeUntil = getTimeUntil(useClock());
+type MainProps = { timeUntil: number };
+function Main({ timeUntil }: MainProps) {
   const answerClassNames = ["answer"];
   if (timeUntil === 0) {
     answerClassNames.push("now");
@@ -75,19 +75,29 @@ function Main() {
   );
 }
 
+function useTitle(title: string) {
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+}
+
 function App() {
   const language = useCurrentLanguage();
   const headerText = useText("header");
   const contributionText = useText("contribution");
+  const timeUntil = getTimeUntil(useClock());
+
+  useTitle(timeUntil === 0 ? "🎉 " + headerText : headerText);
+
   return (
     <div className="App">
       <header>
         <h1>{headerText}</h1>
       </header>
-      <Main />
+      <Main timeUntil={timeUntil} />
       <footer>
         <ul>
-          {(Object.keys(languages) as Array<Language>).map((localeKey) => (
+          {(Object.keys(languages) as Language[]).map((localeKey) => (
             <li
               className={localeKey === language ? "current" : undefined}
               key={localeKey}
