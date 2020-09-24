@@ -3,10 +3,18 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import { Language, LanguageProvider } from "./i18n";
+import getFallbackLanguage from "./getFallbackLanguage";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <LanguageProvider
+      value={getFallbackLanguage(
+        window.location.search.substring(1) as Language
+      )}
+    >
+      <App />
+    </LanguageProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

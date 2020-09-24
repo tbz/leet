@@ -1,28 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./App.css";
+import { Language, languages, useCurrentLanguage, useText } from "./i18n";
 
 const TICK = 500;
 const HOUR = 13;
 const MINUTE = 37;
-
-const locales = {
-  da: "Dansk",
-  de: "Deutsch",
-  eo: "Esperanto",
-  en: "English",
-  es: "Español",
-  et: "Eesti",
-  fi: "Suomi",
-  fr: "Français",
-  hu: "Magyar",
-  is: "Íslenska",
-  nl: "Nederlands",
-  no: "Norsk",
-  pl: "Polski",
-  sv: "Svenska",
-  el: "Ελληνικά",
-  ja: "日本語",
-};
 
 function getTimeUntil(
   now: Date,
@@ -76,48 +58,61 @@ function Main() {
     timeUntilClassNames.push("now");
   }
 
+  const noText = useText("no");
+  const yesText = useText("yes");
+  const nextText = useText("minutes", { COUNT: timeUntil });
+
   return (
     <main>
       <p className={answerClassNames.join(" ")}>
-        {timeUntil > 0 ? "No" : "Yes"}
+        {timeUntil > 0 ? noText : yesText}
       </p>
       {timeUntil > 0 ? (
-        <p className={timeUntilClassNames.join(" ")}>
-          Next is in {timeUntil} minute(s)
-        </p>
+        <p className={timeUntilClassNames.join(" ")}>{nextText}</p>
       ) : null}
     </main>
   );
 }
 
 function App() {
+  const language = useCurrentLanguage();
+  console.log(language);
+
+  const headerText = useText("header");
+  const contributionText = useText("contribution");
   return (
     <div className="App">
       <header>
-        <h1>Is it 1337?</h1>
+        <h1>{headerText}</h1>
       </header>
       <Main />
       <footer>
         <ul>
-          {(Object.keys(locales) as Array<keyof typeof locales>).map(
-            (localeKey) => (
-              <li
-                className={localeKey === "en" ? "current" : undefined}
-                key={localeKey}
-              >
-                {localeKey === "en" ? (
-                  locales[localeKey]
-                ) : (
-                  <a href="about:blank">{locales[localeKey]}</a>
-                )}
-              </li>
-            )
-          )}
+          {(Object.keys(languages) as Array<Language>).map((localeKey) => (
+            <li
+              className={localeKey === language ? "current" : undefined}
+              key={localeKey}
+            >
+              {localeKey === language ? (
+                languages[localeKey]
+              ) : (
+                <a href={`?${localeKey}`}>{languages[localeKey]}</a>
+              )}
+            </li>
+          ))}
         </ul>
         <p>
           <a href="about:blank">Contribute more languages!</a>
         </p>
-        <p>© Tobias Baaz and contributors 2007-2020</p>
+        <p>
+          © Tobias Baaz and contributors 2007-2020
+          {contributionText ? (
+            <>
+              <br />
+              Contributed by: {contributionText}
+            </>
+          ) : null}
+        </p>
       </footer>
     </div>
   );

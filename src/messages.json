@@ -1,0 +1,122 @@
+{
+  "da": {
+    "__name": "Dansk",
+    "header": "Er klokken 1337?",
+    "yes": "Ja",
+    "no": "Nej",
+    "minutes": "N\u00e6ste om {COUNT, plural, one{1 minut} other{# minutter}}",
+    "contribution": "Kim and Moose"
+  },
+  "de": {
+    "__name": "Deutsch",
+    "header": "Ist es 1337 uhr?",
+    "yes": "Ja",
+    "no": "Nein",
+    "minutes": "Ist zun\u00e4chst in {COUNT} Minuten",
+    "contribution": "Kim and Moose"
+  },
+  "el": {
+    "__name": "\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac",
+    "header": "\u0388\u03c7\u03b5\u03b9 \u03c0\u03ac\u03b5\u03b9 1337;",
+    "yes": "\u039d\u03b1\u03b9!",
+    "no": "\u038c\u03c7\u03b9",
+    "minutes": "\u03a4\u03bf \u03b5\u03c0\u03cc\u03bc\u03b5\u03bd\u03bf \u03b8\u03b1 \u03b5\u03af\u03bd\u03b1\u03b9 \u03c3\u03b5 {COUNT} \u03bb\u03b5\u03c0\u03c4\u03ac",
+    "contribution": "Paraskevi"
+  },
+  "eo": {
+    "__name": "Esperanto",
+    "header": "\u0108u jam estas 1337?",
+    "yes": "Jes",
+    "no": "Ne",
+    "minutes": "Sekva okazos post {COUNT} minutoj.",
+    "contribution": "Kajiki"
+  },
+  "en": {
+    "__name": "English",
+    "header": "Is it 1337?",
+    "yes": "Yes!",
+    "no": "No",
+    "minutes": "Next is in {COUNT, plural, one{one minute} other{# minutes}}",
+    "contribution": ""
+  },
+  "es": {
+    "__name": "Espa\u00f1ol",
+    "header": "\u00bfEs 1337?",
+    "yes": "Si",
+    "no": "No",
+    "minutes": "El pr\u00f3ximo es en {COUNT} minuto(s)",
+    "contribution": "biberu"
+  },
+  "et": {
+    "__name": "Eesti",
+    "header": "Kas kell on 1337?",
+    "yes": "Jah, on k\u00fcll",
+    "no": "Ei ole",
+    "minutes": "J\u00e4rgmine on {COUNT} minuti p\u00e4rast",
+    "contribution": "Lembit"
+  },
+  "fi": {
+    "__name": "Suomi",
+    "header": "Onko kello 1337?",
+    "yes": "Kyll\u00e4 on",
+    "no": "Ei ole",
+    "minutes": "Seuraava on {COUNT} minutin p\u00e4\u00e4st\u00e4",
+    "contribution": "iam_ and tores(?)"
+  },
+  "fr": {
+    "__name": "Fran\u00e7ais",
+    "header": "Est il 1337?",
+    "yes": "Oui",
+    "no": "Non",
+    "minutes": "Est apr\u00e8s en {COUNT} minutes.",
+    "contribution": "iam_ and tores(?)"
+  },
+  "hu": {
+    "__name": "Magyar",
+    "header": "Vajon 1337 van?",
+    "yes": "Igen",
+    "no": "Nem",
+    "minutes": "A k\u00f6vetkez\u0151 {COUNT} perc m\u00falva",
+    "contribution": "Steeve"
+  },
+  "is": {
+    "__name": "\u00cdslenska",
+    "header": "Er klukkan 1337?",
+    "yes": "J\u00e1",
+    "no": "Nei",
+    "minutes": "N\u00e6st efter {COUNT} m\u00edn\u00fatur",
+    "contribution": "Viktor"
+  },
+  "ja": {
+    "__name": "\u65e5\u672c\u8a9e",
+    "header": "\u6642\u9593\u306f1337\u3067\u3059\u304b\uff1f",
+    "yes": "\u306f\u3044",
+    "no": "\u3044\u3044\u3048",
+    "minutes": "\u6b21\u306f\u7d04{COUNT}\u5206\u3067\u3059",
+    "contribution": "\u00d6man"
+  },
+  "nl": {
+    "__name": "Nederlands",
+    "header": "Is het 1337?",
+    "yes": "Ja",
+    "no": "Nee",
+    "minutes": "Volgende is over {COUNT} minuten",
+    "contribution": "Jimmy"
+  },
+  "no": {
+    "__name": "Norsk",
+    "header": "Er klokka 1337?",
+    "yes": "Ja",
+    "no": "Nei",
+    "minutes": "Neste om {COUNT} minutt(er)",
+    "contribution": "mosesS"
+  },
+  "sv": {
+    "__name": "Svenska",
+    "header": "\u00c4r klockan 1337?",
+    "yes": "Ja",
+    "no": "Nej",
+    "minutes": "Nästa är om {COUNT, plural, one{en minut} other{# minuter}}",
+    "contribution": ""
+  }
+}
