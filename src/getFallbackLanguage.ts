@@ -25,9 +25,8 @@ function getSupportedLanguageFromBrowser() {
   return null;
 }
 
-export default function getFallbackLanguage(providedLanguage?: Language) {
+export default function getFallbackLanguage() {
   return (
-    providedLanguage ||
     getSupportedLanguageFromCookie() ||
     getSupportedLanguageFromBrowser() ||
     DEFAULT_LANGUAGE

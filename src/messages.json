@@ -13,7 +13,7 @@
     "yes": "Ja",
     "no": "Nein",
     "minutes": "Ist zun\u00e4chst in {COUNT} Minuten",
-    "contribution": "Kim and Moose"
+    "contribution": "Hauke"
   },
   "el": {
     "__name": "\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac",
@@ -36,8 +36,7 @@
     "header": "Is it 1337?",
     "yes": "Yes!",
     "no": "No",
-    "minutes": "Next is in {COUNT, plural, one{one minute} other{# minutes}}",
-    "contribution": ""
+    "minutes": "Next is in {COUNT, plural, one{one minute} other{# minutes}}"
   },
   "es": {
     "__name": "Espa\u00f1ol",
@@ -68,8 +67,7 @@
     "header": "Est il 1337?",
     "yes": "Oui",
     "no": "Non",
-    "minutes": "Est apr\u00e8s en {COUNT} minutes.",
-    "contribution": "iam_ and tores(?)"
+    "minutes": "Est apr\u00e8s en {COUNT} minutes."
   },
   "hu": {
     "__name": "Magyar",
@@ -101,7 +99,7 @@
     "yes": "Ja",
     "no": "Nee",
     "minutes": "Volgende is over {COUNT} minuten",
-    "contribution": "Jimmy"
+    "contribution": "Jimmy and Twan Houwers"
   },
   "no": {
     "__name": "Norsk",
@@ -118,5 +116,13 @@
     "no": "Nej",
     "minutes": "Nästa är om {COUNT, plural, one{en minut} other{# minuter}}",
     "contribution": ""
+  },
+  "pl": {
+    "__name": "Polski",
+    "header": "Czy jest godzina 1337?",
+    "yes": "Tak",
+    "no": "Nie",
+    "minutes": "Kolejna nastąpi za {COUNT} minut",
+    "contribution": "Marcin"
   }
 }

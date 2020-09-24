@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import "./App.css";
 import { Language, languages, useCurrentLanguage, useText } from "./i18n";
 
@@ -76,8 +77,6 @@ function Main() {
 
 function App() {
   const language = useCurrentLanguage();
-  console.log(language);
-
   const headerText = useText("header");
   const contributionText = useText("contribution");
   return (
@@ -96,14 +95,14 @@ function App() {
               {localeKey === language ? (
                 languages[localeKey]
               ) : (
-                <a href={`?${localeKey}`}>{languages[localeKey]}</a>
+                <Link to={`/${localeKey}`}>{languages[localeKey]}</Link>
               )}
             </li>
           ))}
         </ul>
-        <p>
+        {/* <p>
           <a href="about:blank">Contribute more languages!</a>
-        </p>
+        </p> */}
         <p>
           © Tobias Baaz and contributors 2007-2020
           {contributionText ? (
