@@ -109,11 +109,13 @@ function App() {
               )}
             </li>
           ))}
+          <li className="contribute">
+            <a href="mailto:tobias@baaz.nu?subject=isit1337.com%20contribution&amp;body=I%20want%20to%20contribute%21%0A%0ALanguage%3A%0A%0ATranslations%3A%0AIs%20it%201337%3F%20%3D%0AYes%20%3D%0ANo%20%3D%0ANext%20is%20in%20%23%20minute%28s%29%20%3D%0A%0AHave%20a%20nice%20day%21">
+              Contribute more languages!
+            </a>
+          </li>
         </ul>
-        {/* <p>
-          <a href="about:blank">Contribute more languages!</a>
-        </p> */}
-        <p>
+        <p className="copyright">
           © Tobias Baaz and contributors 2007-2020
           {contributionText ? (
             <>
