@@ -58,6 +58,14 @@ footer li {
   margin: 0 0.25em;
 }
 
+.cookie {
+  font-size: 0.825rem;
+}
+
+.clear {
+  border-bottom: 0;
+}
+
 .contribute {
   font-size: 0.825em;
   margin-top: 0.5em;
@@ -68,6 +76,10 @@ footer li {
 }
 
 .copyright {
+  font-size: 0.825rem;
+}
+
+.clear-cookie {
   font-size: 0.825rem;
 }
 

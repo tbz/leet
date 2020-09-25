@@ -9,32 +9,23 @@ import {
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { Language, LanguageProvider, languages } from "./i18n";
-import getFallbackLanguage from "./getFallbackLanguage";
-
-function Wrapper() {
-  const language = useLocation().pathname.substr(1);
-  return (
-    <LanguageProvider value={(language as Language) || getFallbackLanguage()}>
-      <App />
-    </LanguageProvider>
-  );
-}
+import { Language, languages } from "./i18n";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
         <Route exact path="/">
-          <Wrapper />
+          <App />
         </Route>
         <Route
           sensitive
           exact
           path={Object.keys(languages).map((locale) => `/${locale}`)}
-        >
-          <Wrapper />
-        </Route>
+          render={({ location }) => (
+            <App language={location.pathname.substr(1) as Language} />
+          )}
+        />
       </Switch>
     </Router>
   </React.StrictMode>,

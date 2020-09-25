@@ -1,6 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Language, languages, useCurrentLanguage, useText } from "./i18n";
+import { Language, LanguageProvider, languages, useText } from "./i18n";
+import { clearCookieValue, getCookieValue, setCookieValue } from "./cookie";
+import getFallbackLanguage from "./getFallbackLanguage";
+
 import "./App.css";
 
 const TICK = 500;
@@ -31,31 +34,22 @@ function getTimeUntil(
   return Math.ceil((next.getTime() - now.getTime()) / 60 / 1000);
 }
 
-const timeUntilIsTime = (timeUntil: number) =>
-  `${timeUntil}` === `${HOUR}${MINUTE}`;
+const timeUntilIsTime = (timeUntil: number, hour: number, minute: number) =>
+  `${timeUntil}` === `${hour}${minute}`;
 
-function useClock(tick = TICK) {
-  const [now, setNow] = useState(new Date());
-  const intervalRef = useRef<number | null>(null);
-  useEffect(() => {
-    intervalRef.current = window.setInterval(() => {
-      setNow(new Date());
-    }, tick);
-    return () => {
-      clearInterval(intervalRef.current!);
-    };
-  });
-  return now;
-}
+type MainProps = {
+  timeUntil: number;
+  hour: number;
+  minute: number;
+};
 
-type MainProps = { timeUntil: number };
-function Main({ timeUntil }: MainProps) {
+function Main({ timeUntil, hour, minute }: MainProps) {
   const answerClassNames = ["answer"];
   if (timeUntil === 0) {
     answerClassNames.push("now");
   }
   const timeUntilClassNames = ["time-until"];
-  if (timeUntilIsTime(timeUntil)) {
+  if (timeUntilIsTime(timeUntil, hour, minute)) {
     timeUntilClassNames.push("now");
   }
 
@@ -75,57 +69,132 @@ function Main({ timeUntil }: MainProps) {
   );
 }
 
+function useClock(tick = TICK) {
+  const [now, setNow] = useState(new Date());
+  const intervalRef = useRef<number | null>(null);
+  useEffect(() => {
+    intervalRef.current = window.setInterval(() => {
+      setNow(new Date());
+    }, tick);
+    return () => {
+      clearInterval(intervalRef.current!);
+    };
+  });
+  return now;
+}
+
 function useTitle(title: string) {
   useEffect(() => {
     document.title = title;
   }, [title]);
 }
 
-function App() {
-  const language = useCurrentLanguage();
+type HeaderProps = {
+  timeUntil: number;
+};
+function Header({ timeUntil }: HeaderProps) {
   const headerText = useText("header");
-  const contributionText = useText("contribution");
-  const timeUntil = getTimeUntil(useClock());
-
   useTitle(timeUntil === 0 ? "🎉 " + headerText : headerText);
 
   return (
-    <div className="App">
-      <header>
-        <h1>{headerText}</h1>
-      </header>
-      <Main timeUntil={timeUntil} />
-      <footer>
-        <ul>
-          {(Object.keys(languages) as Language[]).map((localeKey) => (
-            <li
-              className={localeKey === language ? "current" : undefined}
-              key={localeKey}
+    <header>
+      <h1>{headerText}</h1>
+    </header>
+  );
+}
+
+function Copyright() {
+  const contributionText = useText("contribution");
+
+  return (
+    <p className="copyright">
+      © Tobias Baaz and contributors 2007-2020
+      {contributionText ? (
+        <>
+          <br />
+          Contributed by: {contributionText}
+        </>
+      ) : null}
+    </p>
+  );
+}
+
+// function LanguageButton({language}){
+//   {language ? (language !== fallbackLanguage ?) : null}
+//   {language? (language !== fallbackLanguage ? (
+
+//   ) : getCookieValue() === language ? <Link to="/" onClick={() => clearCookieValue()}>Clear language choice</Link>): null}
+// }
+
+type AppProps = {
+  language?: Language;
+};
+function App({ language }: AppProps) {
+  const fallbackLanguage = getFallbackLanguage();
+  const currentLanguage = language || fallbackLanguage;
+  const timeUntil = getTimeUntil(useClock());
+
+  return (
+    <LanguageProvider value={currentLanguage}>
+      <div className="App">
+        <Header timeUntil={timeUntil} />
+        <Main timeUntil={timeUntil} hour={HOUR} minute={MINUTE} />
+        <footer>
+          {language && language !== fallbackLanguage ? (
+            <Link
+              className="cookie"
+              to="/"
+              onClick={() => setCookieValue(language)}
             >
-              {localeKey === language ? (
-                languages[localeKey]
-              ) : (
-                <Link to={`/${localeKey}`}>{languages[localeKey]}</Link>
-              )}
-            </li>
-          ))}
-          <li className="contribute">
-            <a href="mailto:tobias@baaz.nu?subject=isit1337.com%20contribution&amp;body=I%20want%20to%20contribute%21%0A%0ALanguage%3A%0A%0ATranslations%3A%0AIs%20it%201337%3F%20%3D%0AYes%20%3D%0ANo%20%3D%0ANext%20is%20in%20%23%20minute%28s%29%20%3D%0A%0AHave%20a%20nice%20day%21">
-              Contribute more languages!
-            </a>
-          </li>
-        </ul>
-        <p className="copyright">
-          © Tobias Baaz and contributors 2007-2020
-          {contributionText ? (
-            <>
-              <br />
-              Contributed by: {contributionText}
-            </>
+              Set as your language
+            </Link>
           ) : null}
-        </p>
-      </footer>
-    </div>
+          <ul>
+            {(Object.keys(languages) as Language[]).map((localeKey) => (
+              <li
+                className={
+                  localeKey === currentLanguage ? "current" : undefined
+                }
+                key={localeKey}
+              >
+                {localeKey === currentLanguage ? (
+                  languages[localeKey]
+                ) : (
+                  <Link
+                    to={localeKey === fallbackLanguage ? "/" : `/${localeKey}`}
+                  >
+                    {languages[localeKey]}
+                  </Link>
+                )}
+              </li>
+              //   {localeKey === currentLanguage ? (
+              //     <>
+              //       {languages[localeKey]}
+              //       {localeKey !== fallbackLanguage ? <> <Link to="/" className="clear" title="Clear">&times;</Link></>: null}
+              //   ) : (
+
+              //   )}
+              // </li>
+            ))}
+            <li className="contribute">
+              <a href="mailto:tobias@baaz.nu?subject=isit1337.com%20contribution&amp;body=I%20want%20to%20contribute%21%0A%0ALanguage%3A%0A%0ATranslations%3A%0AIs%20it%201337%3F%20%3D%0AYes%20%3D%0ANo%20%3D%0ANext%20is%20in%20%23%20minute%28s%29%20%3D%0A%0AHave%20a%20nice%20day%21">
+                Contribute more languages!
+              </a>
+            </li>
+          </ul>
+          <Copyright />
+          {getCookieValue() ? (
+            <Link
+              className="clear-cookie"
+              to="/"
+              onClick={() => clearCookieValue()}
+            >
+              Clear cookie
+            </Link>
+          ) : null}
+        </footer>
+      </div>
+    </LanguageProvider>
   );
 }
 

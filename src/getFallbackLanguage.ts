@@ -1,15 +1,14 @@
 import { Language, languages } from "./i18n";
-import * as Cookies from "js-cookie";
+import { getCookieValue } from "./cookie";
 
 const DEFAULT_LANGUAGE = "en";
-const COOKIE_NAME = "lang";
 
 function isLanguage(testLanguage: string): testLanguage is Language {
   return testLanguage in languages;
 }
 
 function getSupportedLanguageFromCookie() {
-  const testLanguage = Cookies.get(COOKIE_NAME);
+  const testLanguage = getCookieValue();
   return testLanguage && isLanguage(testLanguage) ? testLanguage : null;
 }
 
