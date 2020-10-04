@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Language, LanguageProvider, languages, useText } from "./i18n";
 import { clearCookieValue, getCookieValue, setCookieValue } from "./cookie";
 import getFallbackLanguage from "./getFallbackLanguage";
+import usePageTracking from "./usePageTracking";
 
 import "./App.css";
 
@@ -119,17 +120,12 @@ function Copyright() {
   );
 }
 
-// function LanguageButton({language}){
-//   {language ? (language !== fallbackLanguage ?) : null}
-//   {language? (language !== fallbackLanguage ? (
-
-//   ) : getCookieValue() === language ? <Link to="/" onClick={() => clearCookieValue()}>Clear language choice</Link>): null}
-// }
-
 type AppProps = {
   language?: Language;
 };
 function App({ language }: AppProps) {
+  usePageTracking();
+
   const fallbackLanguage = getFallbackLanguage();
   const currentLanguage = language || fallbackLanguage;
   const timeUntil = getTimeUntil(useClock());
@@ -167,14 +163,6 @@ function App({ language }: AppProps) {
                   </Link>
                 )}
               </li>
-              //   {localeKey === currentLanguage ? (
-              //     <>
-              //       {languages[localeKey]}
-              //       {localeKey !== fallbackLanguage ? <> <Link to="/" className="clear" title="Clear">&times;</Link></>: null}
-              //   ) : (
-
-              //   )}
-              // </li>
             ))}
             <li className="contribute">
               <a href="mailto:tobias@baaz.nu?subject=isit1337.com%20contribution&amp;body=I%20want%20to%20contribute%21%0A%0ALanguage%3A%0A%0ATranslations%3A%0AIs%20it%201337%3F%20%3D%0AYes%20%3D%0ANo%20%3D%0ANext%20is%20in%20%23%20minute%28s%29%20%3D%0A%0AHave%20a%20nice%20day%21">

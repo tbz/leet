@@ -24,10 +24,12 @@ function getSupportedLanguageFromBrowser() {
   return null;
 }
 
-export default function getFallbackLanguage() {
+function getFallbackLanguage() {
   return (
     getSupportedLanguageFromCookie() ||
     getSupportedLanguageFromBrowser() ||
     DEFAULT_LANGUAGE
   );
 }
+
+export default getFallbackLanguage;
