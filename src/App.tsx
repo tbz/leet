@@ -177,7 +177,7 @@ function App({ language }: AppProps) {
               to="/"
               onClick={() => clearCookieValue()}
             >
-              Clear cookie
+              Clear language setting
             </Link>
           ) : null}
         </footer>
