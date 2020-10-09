@@ -9,10 +9,10 @@
   },
   "de": {
     "__name": "Deutsch",
-    "header": "Ist es 1337 uhr?",
+    "header": "Ist es 1337 Uhr?",
     "yes": "Ja",
     "no": "Nein",
-    "minutes": "Ist zun\u00e4chst in {COUNT} Minuten",
+    "minutes": "Das n\u00e4chste mal wieder in {COUNT} Minuten",
     "contribution": "Hauke"
   },
   "el": {
@@ -82,7 +82,7 @@
     "header": "Er klukkan 1337?",
     "yes": "J\u00e1",
     "no": "Nei",
-    "minutes": "N\u00e6st efter {COUNT} m\u00edn\u00fatur",
+    "minutes": "N\u00e6st eftir {COUNT} m\u00edn\u00fatur",
     "contribution": "Viktor"
   },
   "ja": {
@@ -98,7 +98,7 @@
     "header": "Is het 1337?",
     "yes": "Ja",
     "no": "Nee",
-    "minutes": "Volgende is over {COUNT} minuten",
+    "minutes": "Volgende is over {COUNT} minuut/minuten",
     "contribution": "Jimmy and Twan Houwers"
   },
   "no": {
@@ -114,7 +114,7 @@
     "header": "Czy jest godzina 1337?",
     "yes": "Tak",
     "no": "Nie",
-    "minutes": "Kolejna nastąpi za {COUNT} minut",
+    "minutes": "Kolejna nast\u0105pi za {COUNT} minut",
     "contribution": "Marcin"
   },
   "sv": {
@@ -122,7 +122,7 @@
     "header": "\u00c4r klockan 1337?",
     "yes": "Ja",
     "no": "Nej",
-    "minutes": "Nästa är om {COUNT, plural, one{en minut} other{# minuter}}",
+    "minutes": "Nästa \u00e4r om {COUNT, plural, one{en minut} other{# minuter}}",
     "contribution": ""
   }
 }
