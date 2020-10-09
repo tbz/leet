@@ -109,14 +109,6 @@
     "minutes": "Neste om {COUNT} minutt(er)",
     "contribution": "mosesS"
   },
-  "sv": {
-    "__name": "Svenska",
-    "header": "\u00c4r klockan 1337?",
-    "yes": "Ja",
-    "no": "Nej",
-    "minutes": "Nästa är om {COUNT, plural, one{en minut} other{# minuter}}",
-    "contribution": ""
-  },
   "pl": {
     "__name": "Polski",
     "header": "Czy jest godzina 1337?",
@@ -124,5 +116,13 @@
     "no": "Nie",
     "minutes": "Kolejna nastąpi za {COUNT} minut",
     "contribution": "Marcin"
+  },
+  "sv": {
+    "__name": "Svenska",
+    "header": "\u00c4r klockan 1337?",
+    "yes": "Ja",
+    "no": "Nej",
+    "minutes": "Nästa är om {COUNT, plural, one{en minut} other{# minuter}}",
+    "contribution": ""
   }
 }
