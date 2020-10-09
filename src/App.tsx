@@ -165,7 +165,7 @@ function App({ language }: AppProps) {
               </li>
             ))}
             <li className="contribute">
-              <a href="mailto:tobias@baaz.nu?subject=isit1337.com%20contribution&amp;body=I%20want%20to%20contribute%21%0A%0ALanguage%3A%0A%0ATranslations%3A%0AIs%20it%201337%3F%20%3D%0AYes%20%3D%0ANo%20%3D%0ANext%20is%20in%20%23%20minute%28s%29%20%3D%0A%0AHave%20a%20nice%20day%21">
+              <a href="mailto:tobias@baaz.nu?subject=isit1337.com%20contribution&amp;body=I%20want%20to%20contribute%21%0A%0ALanguage%3A%0ANative%20name%3A%0AContributor%3A%0A%0ATranslations%3A%0AIs%20it%201337%3F%20%3D%0AYes%20%3D%0ANo%20%3D%0ANext%20is%20in%20one%20minute%20%3D%0ANext%20is%20in%20%23%20minutes%20%3D%20%0A(Fill%20with%20more%20examples%20if%20your%20language%20has%20more%20number%20cases)%0A%0AHave%20a%20nice%20day%21">
                 Contribute more languages!
               </a>
             </li>
