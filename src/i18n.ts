@@ -12,6 +12,7 @@ export const languages = {
   fr: "Français",
   hu: "Magyar",
   is: "Íslenska",
+  lv: "Latviešu",
   nl: "Nederlands",
   no: "Norsk",
   pl: "Polski",

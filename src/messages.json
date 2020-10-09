@@ -93,6 +93,14 @@
     "minutes": "\u6b21\u306f\u7d04{COUNT}\u5206\u3067\u3059",
     "contribution": "\u00d6man"
   },
+  "lv": {
+    "__name": "Latviešu",
+    "header": "Vai laiks ir 1337?",
+    "yes": "Jā",
+    "no": "Nē",
+    "minutes": "Nākamreiz būs pēc {COUNT} minūtēm",
+    "contribution": "Diana"
+  },
   "nl": {
     "__name": "Nederlands",
     "header": "Is het 1337?",
