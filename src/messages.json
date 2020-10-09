@@ -43,7 +43,7 @@
     "header": "\u00bfEs 1337?",
     "yes": "Si",
     "no": "No",
-    "minutes": "El pr\u00f3ximo es en {COUNT} minuto(s)",
+    "minutes": "El pr\u00f3ximo es en {COUNT, plural, one{# minuto} other{# minutos}}",
     "contribution": "biberu"
   },
   "et": {
@@ -67,7 +67,7 @@
     "header": "Est il 1337?",
     "yes": "Oui",
     "no": "Non",
-    "minutes": "Est apr\u00e8s en {COUNT} minutes."
+    "minutes": "Est apr\u00e8s en {COUNT, plural, one{une minute} other{# minutes}}."
   },
   "hu": {
     "__name": "Magyar",
@@ -98,7 +98,7 @@
     "header": "Is het 1337?",
     "yes": "Ja",
     "no": "Nee",
-    "minutes": "Volgende is over {COUNT} minuut/minuten",
+    "minutes": "Volgende is over {COUNT, plural, one{een minuut} other{# minuten}}",
     "contribution": "Jimmy and Twan Houwers"
   },
   "no": {
@@ -106,7 +106,7 @@
     "header": "Er klokka 1337?",
     "yes": "Ja",
     "no": "Nei",
-    "minutes": "Neste om {COUNT} minutt(er)",
+    "minutes": "Neste om {COUNT, plural, one{1 minutt} other{# minutter}}",
     "contribution": "mosesS"
   },
   "pl": {
