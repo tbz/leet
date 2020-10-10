@@ -4,6 +4,7 @@ import { Language, LanguageProvider, languages, useText } from "./i18n";
 import { clearCookieValue, getCookieValue, setCookieValue } from "./cookie";
 import getFallbackLanguage from "./getFallbackLanguage";
 import usePageTracking from "./usePageTracking";
+import useTitle from "./useTitle";
 
 import "./App.css";
 
@@ -82,12 +83,6 @@ function useClock(tick = TICK) {
     };
   });
   return now;
-}
-
-function useTitle(title: string) {
-  useEffect(() => {
-    document.title = title;
-  }, [title]);
 }
 
 type HeaderProps = {
