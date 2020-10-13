@@ -12,11 +12,12 @@ type ClockProps = {
 function Clock({ hour, minute }: ClockProps) {
   usePageTracking();
   const timeUntil = useTimeUntil(hour, minute);
+  const isNow = timeUntil === 0;
 
   return (
     <div className="Clock">
-      <div className="ClockInner">
-        <div className="ClockTime">{timeUntil}</div>
+      <div className={"ClockInner" + (isNow ? " now" : "")}>
+        <div className="ClockTime">{isNow ? "🎉" : timeUntil}</div>
       </div>
     </div>
   );
