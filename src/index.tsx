@@ -6,22 +6,34 @@ import App from "./App";
 // import * as serviceWorker from "./serviceWorker";
 import { Language, languages } from "./i18n";
 import NotFound from "./NotFound";
+import Clock from "./Clock";
+
+const props = {
+  hour: 13,
+  minute: 37,
+};
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
         <Route exact path="/">
-          <App />
+          <App {...props} />
         </Route>
         <Route
           sensitive
           exact
           path={Object.keys(languages).map((locale) => `/${locale}`)}
           render={({ location }) => (
-            <App language={location.pathname.substr(1) as Language} />
+            <App
+              {...props}
+              language={location.pathname.substr(1) as Language}
+            />
           )}
         />
+        <Route sensitive exact path="/clock">
+          <Clock {...props} />
+        </Route>
         <Route path="*">
           <NotFound />
         </Route>

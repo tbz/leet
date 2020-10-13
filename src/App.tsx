@@ -1,40 +1,13 @@
-import React, { useEffect, useState, useRef } from "react";
+import * as React from "react";
 import { Link } from "react-router-dom";
 import { Language, LanguageProvider, languages, useText } from "./i18n";
 import { clearCookieValue, getCookieValue, setCookieValue } from "./cookie";
 import getFallbackLanguage from "./getFallbackLanguage";
 import usePageTracking from "./usePageTracking";
+import useTimeUntil from "./useTimeUntil";
 import useTitle from "./useTitle";
 
 import "./App.css";
-
-const TICK = 500;
-const HOUR = 13;
-const MINUTE = 37;
-
-function getTimeUntil(
-  now: Date,
-  hours: number = HOUR,
-  minutes: number = MINUTE
-) {
-  const currentHours = now.getHours();
-  const currentMinutes = now.getMinutes();
-
-  if (currentHours === hours && currentMinutes === minutes) {
-    return 0;
-  }
-
-  let next = new Date(now);
-  next.setSeconds(0);
-  next.setMinutes(minutes);
-  next.setHours(hours);
-
-  if (currentHours > hours || currentMinutes > minutes) {
-    next.setDate(next.getDate() + 1);
-  }
-
-  return Math.ceil((next.getTime() - now.getTime()) / 60 / 1000);
-}
 
 const timeUntilIsTime = (timeUntil: number, hour: number, minute: number) =>
   `${timeUntil}` === `${hour}${minute}`;
@@ -71,20 +44,6 @@ function Main({ timeUntil, hour, minute }: MainProps) {
   );
 }
 
-function useClock(tick = TICK) {
-  const [now, setNow] = useState(new Date());
-  const intervalRef = useRef<number | null>(null);
-  useEffect(() => {
-    intervalRef.current = window.setInterval(() => {
-      setNow(new Date());
-    }, tick);
-    return () => {
-      clearInterval(intervalRef.current!);
-    };
-  });
-  return now;
-}
-
 type HeaderProps = {
   timeUntil: number;
 };
@@ -117,19 +76,21 @@ function Copyright() {
 
 type AppProps = {
   language?: Language;
+  hour: number;
+  minute: number;
 };
-function App({ language }: AppProps) {
+function App({ hour, language, minute }: AppProps) {
   usePageTracking();
+  const timeUntil = useTimeUntil(hour, minute);
 
   const fallbackLanguage = getFallbackLanguage();
   const currentLanguage = language || fallbackLanguage;
-  const timeUntil = getTimeUntil(useClock());
 
   return (
     <LanguageProvider value={currentLanguage}>
       <div className="App">
         <Header timeUntil={timeUntil} />
-        <Main timeUntil={timeUntil} hour={HOUR} minute={MINUTE} />
+        <Main timeUntil={timeUntil} hour={hour} minute={minute} />
         <footer>
           {language && language !== fallbackLanguage ? (
             <Link
