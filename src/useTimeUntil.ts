@@ -29,7 +29,10 @@ function getTimeUntil(now: Date, hours: number, minutes: number) {
   next.setMinutes(minutes);
   next.setHours(hours);
 
-  if (currentHours > hours || currentMinutes > minutes) {
+  if (
+    currentHours > hours ||
+    (currentHours === hours && currentMinutes > minutes)
+  ) {
     next.setDate(next.getDate() + 1);
   }
 
