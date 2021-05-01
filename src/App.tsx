@@ -86,12 +86,16 @@ function App({ hour, language, minute }: AppProps) {
   const fallbackLanguage = getFallbackLanguage();
   const currentLanguage = language || fallbackLanguage;
 
+  React.useEffect(() => {
+    document.documentElement.lang = currentLanguage;
+  });
+
   return (
     <LanguageProvider value={currentLanguage}>
       <div className="App">
         <Header timeUntil={timeUntil} />
         <Main timeUntil={timeUntil} hour={hour} minute={minute} />
-        <footer>
+        <footer lang="en">
           {language && language !== fallbackLanguage ? (
             <Link
               className="cookie"
@@ -108,6 +112,7 @@ function App({ hour, language, minute }: AppProps) {
                   localeKey === currentLanguage ? "current" : undefined
                 }
                 key={localeKey}
+                lang={localeKey}
               >
                 {localeKey === currentLanguage ? (
                   languages[localeKey]
