@@ -27,7 +27,7 @@ function Site() {
             render={({ location }) => (
               <App
                 {...props}
-                language={location.pathname.substr(1) as Language}
+                language={location.pathname.substr(1).split("/")[0] as Language}
               />
             )}
           />
