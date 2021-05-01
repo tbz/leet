@@ -1,11 +1,12 @@
 import React from "react";
 import { hydrate, render } from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./index.css";
 import App from "./App";
 import { Language, languages } from "./i18n";
 import NotFound from "./NotFound";
 import Clock from "./Clock";
+
+import "./index.css";
 
 const props = {
   hour: 13,

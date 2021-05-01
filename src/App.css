@@ -23,14 +23,14 @@
   color: gold;
 }
 
-footer ul {
+.footer ul {
   display: flex;
   list-style: none;
   justify-content: center;
   flex-wrap: wrap;
   padding: 0;
 }
-footer li {
+.footer li {
   margin: 0 0.25em;
 }
 

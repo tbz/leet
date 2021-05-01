@@ -13,17 +13,17 @@ function NotFound() {
 
   return (
     <div className="NotFound">
-      <header>
+      <div className="header">
         <h1>{headerText}</h1>
-      </header>
-      <main>
+      </div>
+      <div className="main">
         <p>I don't know :(</p>
-      </main>
-      <footer>
+      </div>
+      <div className="footer">
         <p>
           <Link to="/">Go back!</Link>
         </p>
-      </footer>
+      </div>
     </div>
   );
 }

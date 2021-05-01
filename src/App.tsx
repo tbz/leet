@@ -34,7 +34,7 @@ function Main({ timeUntil, hour, minute }: MainProps) {
   const nextText = useText("minutes", { COUNT: timeUntil });
 
   return (
-    <main>
+    <div className="main">
       <p className={answerClassNames.join(" ")}>
         <NoSsr>{timeUntil > 0 ? noText : yesText}</NoSsr>
       </p>
@@ -43,7 +43,7 @@ function Main({ timeUntil, hour, minute }: MainProps) {
           <p className={timeUntilClassNames.join(" ")}>{nextText}</p>
         ) : null}
       </NoSsr>
-    </main>
+    </div>
   );
 }
 
@@ -55,9 +55,9 @@ function Header({ timeUntil }: HeaderProps) {
   useTitle(timeUntil === 0 ? "🎉 " + headerText : headerText);
 
   return (
-    <header>
+    <div className="header">
       <h1>{headerText}</h1>
-    </header>
+    </div>
   );
 }
 
@@ -101,7 +101,7 @@ function App({ hour, language, minute }: AppProps) {
       <div className="App">
         <Header timeUntil={timeUntil} />
         <Main timeUntil={timeUntil} hour={hour} minute={minute} />
-        <footer lang="en">
+        <div className="footer" lang="en">
           <NoSsr>
             {language && language !== fallbackLanguage ? (
               <Link
@@ -151,7 +151,7 @@ function App({ hour, language, minute }: AppProps) {
               </Link>
             ) : null}
           </NoSsr>
-        </footer>
+        </div>
       </div>
     </LanguageProvider>
   );
