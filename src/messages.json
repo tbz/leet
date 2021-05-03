@@ -132,5 +132,12 @@
     "no": "Nej",
     "minutes": "Nästa \u00e4r om {COUNT, plural, one{en minut} other{# minuter}}",
     "contribution": ""
+  },
+  "it": {
+    "__name": "Italiano",
+    "header": "\u00c8 il 1337?",
+    "yes": "S\u00ec",
+    "no": "No",
+    "minutes": "Il prossimo \u00e8 tra {COUNT, plural, one{un minuto} other{# minuti}}"
   }
 }
