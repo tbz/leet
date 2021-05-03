@@ -12,6 +12,7 @@ export const languages = {
   fr: "Français",
   hu: "Magyar",
   is: "Íslenska",
+  it: "Italiano",
   lv: "Latviešu",
   nl: "Nederlands",
   no: "Norsk",
@@ -54,10 +55,9 @@ function useTexts() {
   return messages[language];
 }
 
-const cache: Partial<Record<
-  Language,
-  Partial<Record<keyof Messages, IntlMessageFormat>>
->> = {};
+const cache: Partial<
+  Record<Language, Partial<Record<keyof Messages, IntlMessageFormat>>>
+> = {};
 
 export function useText(key: keyof Messages, input?: any) {
   const language = useCurrentLanguage();
