@@ -66,7 +66,7 @@ function Copyright() {
 
   return (
     <p className="copyright">
-      © Tobias Baaz and contributors 2007-2020
+      © Tobias Baaz and contributors 2007-2021
       {contributionText ? (
         <>
           <br />
