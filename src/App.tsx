@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { NoSsr } from "./NoSsr";
+import { isSsr, NoSsr } from "./NoSsr";
 import { Language, LanguageProvider, languages, useText } from "./i18n";
 import { clearCookieValue, getCookieValue, setCookieValue } from "./cookie";
 import getFallbackLanguage from "./getFallbackLanguage";
@@ -84,7 +84,10 @@ type AppProps = {
 };
 function App({ hour, language, minute }: AppProps) {
   usePageTracking();
-  const timeUntil = useTimeUntil(hour, minute);
+  let timeUntil = useTimeUntil(hour, minute);
+  if (isSsr()) {
+    timeUntil = 1;
+  }
 
   const fallbackLanguage = getFallbackLanguage();
   const currentLanguage = language || fallbackLanguage;
