@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
+import { isSsr, NoSsr } from "./NoSsr";
 import { Language, LanguageProvider, languages, useText } from "./i18n";
 import { clearCookieValue, getCookieValue, setCookieValue } from "./cookie";
 import getFallbackLanguage from "./getFallbackLanguage";
@@ -35,11 +36,13 @@ function Main({ timeUntil, hour, minute }: MainProps) {
   return (
     <main>
       <p className={answerClassNames.join(" ")}>
-        {timeUntil > 0 ? noText : yesText}
+        <NoSsr>{timeUntil > 0 ? noText : yesText}</NoSsr>
       </p>
-      {timeUntil > 0 ? (
-        <p className={timeUntilClassNames.join(" ")}>{nextText}</p>
-      ) : null}
+      <NoSsr>
+        {timeUntil > 0 ? (
+          <p className={timeUntilClassNames.join(" ")}>{nextText}</p>
+        ) : null}
+      </NoSsr>
     </main>
   );
 }
@@ -81,7 +84,10 @@ type AppProps = {
 };
 function App({ hour, language, minute }: AppProps) {
   usePageTracking();
-  const timeUntil = useTimeUntil(hour, minute);
+  let timeUntil = useTimeUntil(hour, minute);
+  if (isSsr()) {
+    timeUntil = 1;
+  }
 
   const fallbackLanguage = getFallbackLanguage();
   const currentLanguage = language || fallbackLanguage;
@@ -96,15 +102,17 @@ function App({ hour, language, minute }: AppProps) {
         <Header timeUntil={timeUntil} />
         <Main timeUntil={timeUntil} hour={hour} minute={minute} />
         <footer lang="en">
-          {language && language !== fallbackLanguage ? (
-            <Link
-              className="cookie"
-              to="/"
-              onClick={() => setCookieValue(language)}
-            >
-              Set as your language
-            </Link>
-          ) : null}
+          <NoSsr>
+            {language && language !== fallbackLanguage ? (
+              <Link
+                className="cookie"
+                to="/"
+                onClick={() => setCookieValue(language)}
+              >
+                Set as your language
+              </Link>
+            ) : null}
+          </NoSsr>
           <ul>
             {(Object.keys(languages) as Language[]).map((localeKey) => (
               <li
@@ -132,15 +140,17 @@ function App({ hour, language, minute }: AppProps) {
             </li>
           </ul>
           <Copyright />
-          {getCookieValue() ? (
-            <Link
-              className="clear-cookie"
-              to="/"
-              onClick={() => clearCookieValue()}
-            >
-              Clear language setting
-            </Link>
-          ) : null}
+          <NoSsr>
+            {getCookieValue() ? (
+              <Link
+                className="clear-cookie"
+                to="/"
+                onClick={() => clearCookieValue()}
+              >
+                Clear language setting
+              </Link>
+            ) : null}
+          </NoSsr>
         </footer>
       </div>
     </LanguageProvider>
