@@ -1,5 +1,5 @@
-import * as React from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { isSsr, NoSsr } from "./NoSsr";
 import { Language, LanguageProvider, languages, useText } from "./i18n";
 import { clearCookieValue, getCookieValue, setCookieValue } from "./cookie";
@@ -53,10 +53,20 @@ type HeaderProps = {
 function Header({ timeUntil }: HeaderProps) {
   const headerText = useText("header");
   useTitle(timeUntil === 0 ? "🎉 " + headerText : headerText);
+  const headerRef = useRef<HTMLHeadingElement>(null);
+  const { pathname } = useLocation();
+  useEffect(
+    function resetFocus() {
+      headerRef.current?.focus();
+    },
+    [pathname]
+  );
 
   return (
     <header>
-      <h1>{headerText}</h1>
+      <h1 ref={headerRef} tabIndex={-1}>
+        {headerText}
+      </h1>
     </header>
   );
 }
@@ -92,7 +102,7 @@ function App({ hour, language, minute }: AppProps) {
   const fallbackLanguage = getFallbackLanguage();
   const currentLanguage = language || fallbackLanguage;
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.documentElement.lang = currentLanguage;
   });
 
