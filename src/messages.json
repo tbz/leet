@@ -139,5 +139,13 @@
     "yes": "S\u00ec",
     "no": "No",
     "minutes": "Il prossimo \u00e8 tra {COUNT, plural, one{un minuto} other{# minuti}}"
+  },
+  "ber": {
+    "__name": "ⵜⴰⵎⴰⵣⵉⵖⵜ",
+    "header": "ⵉⵣⴷ 1337 ⵖⵉⵍⴰⴷ?",
+    "yes": "ⵢⴰⵀ",
+    "no": "ⵓⵀⵓ",
+    "minutes": "ⵡⵉ ⵢⵓⵛⴽⴰⴷ ⵖ {COUNT, plural, one{ⵢⴰⵜ ⵜⵓⵙⴷⵉⴷⵜ} other {# ⵜⵓⵙⴷⵉⴷⵉⵏ}}",
+    "contribution": "Amine"
   }
 }

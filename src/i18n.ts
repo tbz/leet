@@ -20,6 +20,7 @@ export const languages = {
   sv: "Svenska",
   el: "Ελληνικά",
   ja: "日本語",
+  ber: "ⵜⴰⵎⴰⵣⵉⵖⵜ",
 };
 
 export type Language = keyof typeof languages;
