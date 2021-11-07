@@ -147,5 +147,12 @@
     "no": "ⵓⵀⵓ",
     "minutes": "ⵡⵉ ⵢⵓⵛⴽⴰⴷ ⵖ {COUNT, plural, one{ⵢⴰⵜ ⵜⵓⵙⴷⵉⴷⵜ} other {# ⵜⵓⵙⴷⵉⴷⵉⵏ}}",
     "contribution": "Amine"
+  },
+  "pt": {
+    "__name": "",
+    "header": "São 13:37?",
+    "yes": "Sim",
+    "no": "Não",
+    "minutes": "O próximo é em {COUNT, plural, one{um minuto} other{# minutos}}"
   }
 }
