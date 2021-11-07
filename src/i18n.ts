@@ -4,8 +4,8 @@ import IntlMessageFormat from "intl-messageformat";
 export const languages = {
   da: "Dansk",
   de: "Deutsch",
-  eo: "Esperanto",
   en: "English",
+  eo: "Esperanto",
   es: "Español",
   et: "Eesti",
   fi: "Suomi",
