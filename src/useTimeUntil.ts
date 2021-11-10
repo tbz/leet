@@ -1,13 +1,34 @@
 import { useEffect, useRef, useState } from "react";
 
+declare global {
+  interface Window {
+    __time?: { hour?: number; minute?: number; seconds?: number };
+  }
+}
+
 const TICK = 500;
+
+function getNow() {
+  const now = new Date();
+  if (
+    process.env.NODE_ENV === "development" &&
+    "__time" in window &&
+    window.__time
+  ) {
+    const { hour, minute, seconds } = window.__time;
+    if (hour != null) now.setHours(hour);
+    if (minute != null) now.setMinutes(minute);
+    if (seconds != null) now.setSeconds(seconds);
+  }
+  return now;
+}
 
 function useClock(tick: number) {
   const [now, setNow] = useState(new Date());
   const intervalRef = useRef<number | null>(null);
   useEffect(() => {
     intervalRef.current = window.setInterval(() => {
-      setNow(new Date());
+      setNow(getNow());
     }, tick);
     return () => {
       clearInterval(intervalRef.current!);
