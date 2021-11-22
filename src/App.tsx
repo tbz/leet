@@ -34,7 +34,7 @@ function Main({ timeUntil, hour, minute }: MainProps) {
   const nextText = useText("minutes", { COUNT: timeUntil });
 
   return (
-    <main>
+    <main aria-live="polite">
       <NoSsr>
         <p className={answerClassNames.join(" ")}>
           {timeUntil > 0 ? noText : yesText}
