@@ -35,10 +35,10 @@ function Main({ timeUntil, hour, minute }: MainProps) {
 
   return (
     <main>
-      <p className={answerClassNames.join(" ")}>
-        <NoSsr>{timeUntil > 0 ? noText : yesText}</NoSsr>
-      </p>
       <NoSsr>
+        <p className={answerClassNames.join(" ")}>
+          {timeUntil > 0 ? noText : yesText}
+        </p>
         {timeUntil > 0 ? (
           <p className={timeUntilClassNames.join(" ")}>{nextText}</p>
         ) : null}
