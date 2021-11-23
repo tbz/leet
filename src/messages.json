@@ -1,7 +1,7 @@
 {
   "da": {
     "__name": "Dansk",
-    "header": "Er klokken 1337?",
+    "header": "Er klokken 13:37?",
     "yes": "Ja",
     "no": "Nej",
     "minutes": "N\u00e6ste om {COUNT, plural, one{1 minut} other{# minutter}}",
@@ -9,7 +9,7 @@
   },
   "de": {
     "__name": "Deutsch",
-    "header": "Ist es 1337 Uhr?",
+    "header": "Ist es 13:37 Uhr?",
     "yes": "Ja",
     "no": "Nein",
     "minutes": "Erst wieder in {COUNT, plural, one{# Minut} other{# Minuten}}",
@@ -17,7 +17,7 @@
   },
   "el": {
     "__name": "\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac",
-    "header": "\u0388\u03c7\u03b5\u03b9 \u03c0\u03ac\u03b5\u03b9 1337;",
+    "header": "\u0388\u03c7\u03b5\u03b9 \u03c0\u03ac\u03b5\u03b9 13:37;",
     "yes": "\u039d\u03b1\u03b9!",
     "no": "\u038c\u03c7\u03b9",
     "minutes": "\u03a4\u03bf \u03b5\u03c0\u03cc\u03bc\u03b5\u03bd\u03bf \u03b8\u03b1 \u03b5\u03af\u03bd\u03b1\u03b9 \u03c3\u03b5 {COUNT} \u03bb\u03b5\u03c0\u03c4\u03ac",
@@ -25,7 +25,7 @@
   },
   "eo": {
     "__name": "Esperanto",
-    "header": "\u0108u jam estas 1337?",
+    "header": "\u0108u jam estas 13:37?",
     "yes": "Jes",
     "no": "Ne",
     "minutes": "Sekva okazos post {COUNT} minutoj.",
@@ -33,14 +33,14 @@
   },
   "en": {
     "__name": "English",
-    "header": "Is it 1337?",
+    "header": "Is it 13:37?",
     "yes": "Yes!",
     "no": "No",
     "minutes": "Next is in {COUNT, plural, one{one minute} other{# minutes}}"
   },
   "es": {
     "__name": "Espa\u00f1ol",
-    "header": "\u00bfEs 1337?",
+    "header": "\u00bfEs 13:37?",
     "yes": "Si",
     "no": "No",
     "minutes": "El pr\u00f3ximo es en {COUNT, plural, one{# minuto} other{# minutos}}",
@@ -48,7 +48,7 @@
   },
   "et": {
     "__name": "Eesti",
-    "header": "Kas kell on 1337?",
+    "header": "Kas kell on 13:37?",
     "yes": "Jah, on k\u00fcll",
     "no": "Ei ole",
     "minutes": "J\u00e4rgmine on {COUNT} minuti p\u00e4rast",
@@ -56,7 +56,7 @@
   },
   "fi": {
     "__name": "Suomi",
-    "header": "Onko kello 1337?",
+    "header": "Onko kello 13:37?",
     "yes": "Kyll\u00e4 on",
     "no": "Ei ole",
     "minutes": "Seuraava on {COUNT} minutin p\u00e4\u00e4st\u00e4",
@@ -64,14 +64,14 @@
   },
   "fr": {
     "__name": "Fran\u00e7ais",
-    "header": "Est il 1337?",
+    "header": "Est il 13:37?",
     "yes": "Oui",
     "no": "Non",
     "minutes": "Est apr\u00e8s en {COUNT, plural, one{une minute} other{# minutes}}."
   },
   "hu": {
     "__name": "Magyar",
-    "header": "Vajon 1337 van?",
+    "header": "Vajon 13:37 van?",
     "yes": "Igen",
     "no": "Nem",
     "minutes": "A k\u00f6vetkez\u0151 {COUNT} perc m\u00falva",
@@ -79,7 +79,7 @@
   },
   "is": {
     "__name": "\u00cdslenska",
-    "header": "Er klukkan 1337?",
+    "header": "Er klukkan 13:37?",
     "yes": "J\u00e1",
     "no": "Nei",
     "minutes": "N\u00e6st eftir {COUNT} m\u00edn\u00fatur",
@@ -87,7 +87,7 @@
   },
   "ja": {
     "__name": "\u65e5\u672c\u8a9e",
-    "header": "\u6642\u9593\u306f1337\u3067\u3059\u304b\uff1f",
+    "header": "\u6642\u9593\u306f13:37\u3067\u3059\u304b\uff1f",
     "yes": "\u306f\u3044",
     "no": "\u3044\u3044\u3048",
     "minutes": "\u6b21\u306f\u7d04{COUNT}\u5206\u3067\u3059",
@@ -95,7 +95,7 @@
   },
   "lv": {
     "__name": "Latviešu",
-    "header": "Vai laiks ir 1337?",
+    "header": "Vai laiks ir 13:37?",
     "yes": "Jā",
     "no": "Nē",
     "minutes": "Nākamreiz būs pēc {COUNT} minūtēm",
@@ -103,7 +103,7 @@
   },
   "nl": {
     "__name": "Nederlands",
-    "header": "Is het 1337?",
+    "header": "Is het 13:37?",
     "yes": "Ja",
     "no": "Nee",
     "minutes": "Volgende is over {COUNT, plural, one{een minuut} other{# minuten}}",
@@ -111,7 +111,7 @@
   },
   "no": {
     "__name": "Norsk",
-    "header": "Er klokka 1337?",
+    "header": "Er klokka 13:37?",
     "yes": "Ja",
     "no": "Nei",
     "minutes": "Neste om {COUNT, plural, one{1 minutt} other{# minutter}}",
@@ -119,7 +119,7 @@
   },
   "pl": {
     "__name": "Polski",
-    "header": "Czy jest godzina 1337?",
+    "header": "Czy jest godzina 13:37?",
     "yes": "Tak",
     "no": "Nie",
     "minutes": "Kolejna nast\u0105pi za {COUNT} minut",
@@ -127,7 +127,7 @@
   },
   "sv": {
     "__name": "Svenska",
-    "header": "\u00c4r klockan 1337?",
+    "header": "\u00c4r klockan 13:37?",
     "yes": "Ja",
     "no": "Nej",
     "minutes": "Nästa \u00e4r om {COUNT, plural, one{en minut} other{# minuter}}",
@@ -135,14 +135,14 @@
   },
   "it": {
     "__name": "Italiano",
-    "header": "\u00c8 il 1337?",
+    "header": "\u00c8 il 13:37?",
     "yes": "S\u00ec",
     "no": "No",
     "minutes": "Il prossimo \u00e8 tra {COUNT, plural, one{un minuto} other{# minuti}}"
   },
   "ber": {
     "__name": "ⵜⴰⵎⴰⵣⵉⵖⵜ",
-    "header": "ⵉⵣⴷ 1337 ⵖⵉⵍⴰⴷ?",
+    "header": "ⵉⵣⴷ 13:37 ⵖⵉⵍⴰⴷ?",
     "yes": "ⵢⴰⵀ",
     "no": "ⵓⵀⵓ",
     "minutes": "ⵡⵉ ⵢⵓⵛⴽⴰⴷ ⵖ {COUNT, plural, one{ⵢⴰⵜ ⵜⵓⵙⴷⵉⴷⵜ} other {# ⵜⵓⵙⴷⵉⴷⵉⵏ}}",
