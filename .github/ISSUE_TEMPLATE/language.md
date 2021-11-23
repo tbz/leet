@@ -3,8 +3,7 @@ name: Language
 about: Contribute a new language
 title: "[Language] Name of language in English"
 labels: translation
-assignees: ''
-
+assignees: ""
 ---
 
 Hello! Please add this language.
@@ -14,7 +13,8 @@ Native name:
 Contributor:
 
 # Translations
-Is it 1337? =
+
+Is it 13:37? =
 Yes =
 No =
 Next is in one minute =
