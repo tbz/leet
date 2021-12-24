@@ -1,4 +1,4 @@
-import * as Cookies from "js-cookie";
+import Cookies from "js-cookie";
 import { Language } from "./i18n";
 
 const COOKIE_NAME = "lang";
