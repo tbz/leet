@@ -6,7 +6,7 @@ import useTitle from "./useTitle";
 import "./NotFound.css";
 
 function NotFound() {
-  const headerText = "Is it 1337?";
+  const headerText = "Is it 13:37?";
   const mainText = "Language not found";
   useTitle(`${headerText} – ${mainText}`);
   usePageTracking();
