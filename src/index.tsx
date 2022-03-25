@@ -1,6 +1,6 @@
 import React from "react";
 import { hydrate, render } from "react-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import { Language, languages } from "./i18n";
@@ -16,28 +16,19 @@ function Site() {
   return (
     <React.StrictMode>
       <Router>
-        <Switch>
-          <Route exact path="/">
-            <App {...props} />
-          </Route>
-          <Route
-            sensitive
-            exact
-            path={Object.keys(languages).map((locale) => `/${locale}`)}
-            render={({ location }) => (
-              <App
-                {...props}
-                language={location.pathname.substr(1).split("/")[0] as Language}
-              />
-            )}
-          />
-          <Route sensitive exact path="/clock">
-            <Clock {...props} />
-          </Route>
-          <Route path="*">
-            <NotFound />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/" element={<App {...props} />} />
+          {Object.keys(languages).map((locale) => (
+            <Route
+              key={locale}
+              caseSensitive
+              path={"/" + locale}
+              element={<App {...props} language={locale as Language} />}
+            />
+          ))}
+          <Route caseSensitive path="/clock" element={<Clock {...props} />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </Router>
     </React.StrictMode>
   );
