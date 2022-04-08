@@ -1,5 +1,5 @@
 import React from "react";
-import { hydrate, render } from "react-dom";
+import { hydrateRoot, createRoot } from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
@@ -34,9 +34,10 @@ function Site() {
   );
 }
 
-const rootElement = document.getElementById("root");
-if (rootElement?.hasChildNodes()) {
-  hydrate(<Site />, rootElement);
-} else {
-  render(<Site />, rootElement);
+const container = document.getElementById("root");
+if (container?.hasChildNodes()) {
+  hydrateRoot(container, <Site />);
+} else if (container) {
+  const root = createRoot(container);
+  root.render(<Site />);
 }
