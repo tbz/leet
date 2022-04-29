@@ -1,3 +1,4 @@
+// @ts-expect-error No typings
 import Cookies from "js-cookie";
 import { Language } from "./i18n";
 
