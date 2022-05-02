@@ -17,13 +17,12 @@
     "react-ga": "^3.3.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-    "react-snap": "^1.23.0",
     "typescript": "^4.6.4"
   },
   "scripts": {
     "start": "react-scripts start",
+    "prebuild": "npm run ts:check",
     "build": "react-scripts build",
-    "postbuild": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "ts:check": "tsc --noEmit --project ./tsconfig.json"
